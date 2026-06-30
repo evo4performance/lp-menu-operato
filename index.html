@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+	<meta name="google-site-verification" content="enTZ83pszXUo54YiH2T8MV7WuripC2JsisXb1sQ9KP0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operato | Sistema de Gestão para Restaurantes e Deliveries</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            animation: fade-in 0.6s ease-out forwards;
+        }
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 4s ease-in-out infinite;
+        }
+        .primary-red-bg { background-color: #d11b1b; }
+        .primary-red-text { color: #d11b1b; }
+        .primary-red-border { border-color: #d11b1b; }
+        
+        /* Custom scrollbar for feature lists */
+        .plan-list::-webkit-scrollbar {
+            width: 4px;
+        }
+        .plan-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .plan-list::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased overflow-x-hidden text-sm">
+
+    <!-- Navegação -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-lg primary-red-bg shadow-lg">
+                    O
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-slate-900">Operato</span>
+            </div>
+
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex items-center gap-8 font-semibold text-xs">
+                <a href="#solucoes" class="hover:text-red-600 transition-colors uppercase tracking-widest">Soluções</a>
+                <a href="#planos" class="hover:text-red-600 transition-colors uppercase tracking-widest">Planos</a>
+                <a href="#porque-nos" class="hover:text-red-600 transition-colors uppercase tracking-widest">Porquê Nós?</a>
+                <a href="https://wa.me/5583993939593" target="_blank" class="px-5 py-2 rounded-full text-white font-bold transition-transform hover:scale-105 shadow-md flex items-center gap-2 primary-red-bg">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="menu-toggle" class="md:hidden p-2 text-slate-900">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl py-6 px-6 flex flex-col gap-4 md:hidden border-t">
+            <a href="#solucoes" class="text-lg font-bold py-2 border-b border-slate-50">Soluções</a>
+            <a href="#planos" class="text-lg font-bold py-2 border-b border-slate-50">Planos</a>
+            <a href="#porque-nos" class="text-lg font-bold py-2 border-b border-slate-50">Diferenciais</a>
+            <a href="https://wa.me/5583993939593" target="_blank" class="w-full py-4 rounded-xl text-white font-bold primary-red-bg text-center">
+                Falar no WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-28 pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+            <div class="z-10 animate-in text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-red-600 font-bold text-[10px] mb-5 tracking-widest uppercase">
+                    SISTEMA DE AUTOATENDIMENTO INTELIGENTE
+                </div>
+                <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight mb-5 tracking-tight text-slate-900">
+                    Seu Restaurante e <br>
+                    <span class="primary-red-text">Delivery Autônomo.</span>
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-lg leading-relaxed font-medium">
+                    Cardápio digital de alta conversão para pedidos diretos. Simplifique sua operação e elimine a dependência de atendimento manual no chat.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start text-sm">
+                    <a href="https://wa.me/5583993939593" target="_blank" class="px-7 py-3.5 rounded-full text-white font-bold flex items-center justify-center gap-2 shadow-lg hover:brightness-110 transition-all primary-red-bg">
+                        Começar Agora <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://menu-modelo.lovable.app" target="_blank" class="px-7 py-3.5 rounded-full border-2 border-slate-200 font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2 text-slate-900">
+                        Ver demonstração
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="rounded-[30px] overflow-hidden shadow-xl rotate-1 hover:rotate-0 transition-transform duration-500 max-w-lg ml-auto">
+                    <img src="https://i.imgur.com/fgzJije.png" 
+                         alt="" 
+                         class="w-full h-auto object-cover">
+                </div>
+                <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg flex items-center gap-3 animate-bounce-slow border border-slate-50">
+                    <div class="bg-green-100 p-2 rounded-full text-green-600">
+                        <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-xs text-slate-900">Novo Pedido!</p>
+                        <p class="text-[10px] text-slate-500 font-medium">Entrou direto pelo Cardápio Digital.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-0 right-0 -z-10 w-1/4 h-full bg-red-50 rounded-l-[80px] hidden lg:block"></div>
+    </section>
+
+    <!-- Promises Section -->
+    <section class="bg-slate-900 py-12 text-white">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-around gap-8 text-center">
+            <div class="flex flex-col items-center">
+                <i data-lucide="percent" class="text-red-500 w-8 h-8 mb-3"></i>
+                <p class="text-xl lg:text-2xl font-extrabold mb-1 tracking-tight">Taxa Zero</p>
+                <p class="text-slate-400 font-semibold uppercase text-[10px] tracking-widest leading-none">0% de comissão por pedido</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i data-lucide="clock-4" class="text-red-500 w-8 h-8 mb-3"></i>
+                <p class="text-xl lg:text-2xl font-extrabold mb-1 tracking-tight">Setup Rápido</p>
+                <p class="text-slate-400 font-semibold uppercase text-[10px] tracking-widest leading-none">Online em menos de 24h</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i data-lucide="infinity" class="text-red-500 w-8 h-8 mb-3"></i>
+                <p class="text-xl lg:text-2xl font-extrabold mb-1 tracking-tight">Pedidos Ilimitados</p>
+                <p class="text-slate-400 font-semibold uppercase text-[10px] tracking-widest leading-none">Sem limites de volume</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i data-lucide="headset" class="text-red-500 w-8 h-8 mb-3"></i>
+                <p class="text-xl lg:text-2xl font-extrabold mb-1 tracking-tight">Suporte Ágil</p>
+                <p class="text-slate-400 font-semibold uppercase text-[10px] tracking-widest leading-none">Humano via WhatsApp</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="solucoes" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="mb-12">
+                <h2 class="text-3xl font-extrabold mb-3 text-slate-900 tracking-tight">Autonomia total para o seu cliente</h2>
+                <p class="text-slate-600 text-base max-w-2xl mx-auto font-medium leading-relaxed">
+                    O Operato centraliza os pedidos diretamente no sistema, eliminando a confusão de conversas manuais e erros de anotação.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 text-left">
+                <div class="p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="qr-code" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-slate-900">Cardápio Inteligente</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed font-medium">
+                        O cliente visualiza fotos, escolhe opcionais e fecha o pedido sozinho através do link ou QR Code.
+                    </p>
+                </div>
+                <div class="p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-slate-900">Gestão Centralizada</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed font-medium">
+                        Receba os pedidos instantaneamente no seu painel. O sistema organiza a produção e notifica a cozinha.
+                    </p>
+                </div>
+                <div class="p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-slate-900">Controle Total</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed font-medium">
+                        Acompanhe o desempenho das suas vendas e o comportamento do seu público de forma automática.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Showcase -->
+    <section class="py-20 primary-red-bg text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="bg-white rounded-[35px] p-3 shadow-2xl max-w-[260px] mx-auto transform -rotate-3">
+                        <div class="aspect-[9/19] bg-slate-100 rounded-[25px] overflow-hidden">
+                            <img src="https://i.imgur.com/moJ2OkI.png" 
+                                 alt=""
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 text-left">
+                    <h2 class="text-3xl lg:text-4xl font-black mb-6 leading-tight">
+                        A experiência digital que o seu cliente merece.
+                    </h2>
+                    <div class="space-y-5">
+                        <div class="flex gap-3">
+                            <div class="bg-white/20 p-2 rounded-lg h-fit"><i data-lucide="zap" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Agilidade no Pedido</h4>
+                                <p class="text-white/80 text-sm font-medium leading-relaxed">O cliente escolhe e envia o pedido pelo sistema, sem filas e com clareza total dos opcionais.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="bg-white/20 p-2 rounded-lg h-fit"><i data-lucide="shopping-cart" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Venda Sugestiva</h4>
+                                <p class="text-white/80 text-sm font-medium leading-relaxed">O sistema oferece acompanhamentos automáticos, aumentando o seu faturamento médio por cliente.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="bg-white/20 p-2 rounded-lg h-fit"><i data-lucide="chef-hat" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Foco na Cozinha</h4>
+                                <p class="text-white/80 text-sm font-medium leading-relaxed">Sua equipe foca no preparo, enquanto o Operato cuida da recepção e organização inteligente dos pedidos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos Section -->
+    <section id="planos" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold mb-3 text-slate-900 tracking-tight text-center">Escolha o seu Plano</h2>
+            <p class="text-slate-600 mb-12 font-medium text-sm uppercase tracking-widest text-center">Soluções modulares para o seu negócio</p>
+
+            <!-- Planos Básicos -->
+            <div class="grid lg:grid-cols-3 gap-6 mb-8 items-stretch">
+                <!-- Delivery -->
+                <div class="bg-white p-6 rounded-[30px] border border-slate-100 flex flex-col transition-all hover:shadow-xl hover:border-emerald-200 group text-left shadow-sm">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="p-3 bg-emerald-50 text-emerald-500 rounded-xl"><i data-lucide="truck" class="w-6 h-6"></i></div>
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full uppercase">Delivery</span>
+                    </div>
+                    <div class="mb-5 text-3xl font-extrabold text-slate-900">R$ 49 <span class="text-slate-500 font-medium text-sm">/mês</span></div>
+                    <div class="h-60 overflow-y-auto plan-list pr-1 text-[11px] text-slate-600 font-medium">
+                        <ul class="space-y-1.5">
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline mr-1"></i> Cupons de desconto</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline mr-1"></i> Cardápio digital com fotos</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline mr-1"></i> Carrinho via WhatsApp</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline mr-1"></i> Painel de comandas digital</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline mr-1"></i> Painel do entregador com PIN</li>
+                            <li class="font-bold text-slate-900"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 inline mr-1"></i> Painel de gestão de estoque</li>
+                            <li class="font-bold text-slate-900"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 inline mr-1"></i> Painel financeiro completo</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline mr-1"></i> Integrações de Marketing</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 inline mr-1"></i> Importação CSV em massa</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5583993939593" target="_blank" class="w-full mt-5 py-3 rounded-2xl font-bold transition-all bg-emerald-500 text-white hover:brightness-110 text-center text-xs shadow-md shadow-emerald-100 uppercase tracking-wide">Assinar Delivery</a>
+                </div>
+
+                <!-- Gestão Local (Salão) -->
+                <div class="bg-white p-6 rounded-[30px] border border-slate-100 flex flex-col transition-all hover:shadow-xl hover:border-blue-200 group text-left shadow-sm">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="p-3 bg-blue-50 text-blue-500 rounded-xl"><i data-lucide="layout-dashboard" class="w-6 h-6"></i></div>
+                        <span class="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full uppercase">Salão</span>
+                    </div>
+                    <div class="mb-5 text-3xl font-extrabold text-slate-900">R$ 49 <span class="text-slate-500 font-medium text-sm">/mês</span></div>
+                    <div class="h-60 overflow-y-auto plan-list pr-1 text-[11px] text-slate-600 font-medium">
+                        <ul class="space-y-1.5">
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-blue-500 inline mr-1"></i> QR Code mesa com PIN</li>
+                            <li class="font-bold text-slate-900"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600 inline mr-1"></i> Totem de Autoatendimento</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-blue-500 inline mr-1"></i> Pedidos diretos no sistema</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-blue-500 inline mr-1"></i> Painel de Cozinha (KDS)</li>
+                            <li class="font-bold text-slate-900"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600 inline mr-1"></i> Painel de gestão de estoque</li>
+                            <li class="font-bold text-slate-900"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600 inline mr-1"></i> Painel financeiro completo</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-blue-500 inline mr-1"></i> Painel do garçom com PIN</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-blue-500 inline mr-1"></i> Serviços de mesa automáticos</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-blue-500 inline mr-1"></i> Gestão Multi-admin</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5583993939593" target="_blank" class="w-full mt-5 py-3 rounded-2xl font-bold transition-all bg-blue-500 text-white hover:brightness-110 text-center text-xs shadow-md shadow-blue-100 uppercase tracking-wide">Assinar Salão</a>
+                </div>
+
+                <!-- Reservas -->
+                <div class="bg-white p-6 rounded-[30px] border border-slate-100 flex flex-col transition-all hover:shadow-xl hover:border-orange-200 group text-left shadow-sm">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="p-3 bg-orange-50 text-orange-500 rounded-xl"><i data-lucide="calendar" class="w-6 h-6"></i></div>
+                        <span class="text-[10px] font-bold text-orange-600 bg-orange-50 px-2 py-0.5 rounded-full uppercase">Agenda</span>
+                    </div>
+                    <div class="mb-5 text-3xl font-extrabold text-slate-900">R$ 49 <span class="text-slate-500 font-medium text-sm">/mês</span></div>
+                    <div class="h-60 overflow-y-auto plan-list pr-1 text-[11px] text-slate-600 font-medium">
+                        <ul class="space-y-1.5">
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-orange-500 inline mr-1"></i> Reservas online</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-orange-500 inline mr-1"></i> Aprovação e limites</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-orange-500 inline mr-1"></i> Mesas e ambientes com fotos</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-orange-500 inline mr-1"></i> Capacidade por ambiente</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-orange-500 inline mr-1"></i> Integrações de Marketing</li>
+                            <li><i data-lucide="check" class="w-3.5 h-3.5 text-orange-500 inline mr-1"></i> Relatórios analíticos</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5583993939593" target="_blank" class="w-full mt-5 py-3 rounded-2xl font-bold transition-all bg-orange-500 text-white hover:brightness-110 text-center text-xs shadow-md shadow-orange-100 uppercase tracking-wide">Assinar Agenda</a>
+                </div>
+            </div>
+
+            <!-- Plano Híbrido (Salao + Delivery) -->
+            <div class="mb-6 p-6 md:p-8 rounded-[35px] border-2 bg-white relative overflow-hidden shadow-lg primary-red-border text-left mx-auto max-w-5xl">
+                <div class="absolute top-0 right-0 px-6 py-2 text-white font-bold text-[10px] uppercase rounded-bl-2xl animate-pulse primary-red-bg tracking-tighter">
+                    Mais Popular ⭐
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-1 tracking-tight">⭐ Plano Híbrido</h3>
+                        <p class="text-slate-500 font-semibold text-sm mb-4 italic">Gestão de Salão + Delivery Digital.</p>
+                        <div class="text-4xl font-black text-slate-900 mb-4 tracking-tighter">R$ 69 <span class="text-slate-500 font-medium text-base">/mês</span></div>
+                        <ul class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-[11px] font-bold text-slate-700">
+                            <li class="flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Delivery + Gestão Local</li>
+                            <li class="flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Gestão de Estoque e Financeiro Unificados</li>
+                            <li class="flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Sincronização em Tempo Real</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5583993939593" target="_blank" class="px-10 py-4 text-white font-black rounded-2xl text-lg shadow-md hover:brightness-110 transition-all primary-red-bg text-center tracking-tight w-full md:w-auto uppercase">
+                        Garantir Híbrido
+                    </a>
+                </div>
+            </div>
+
+            <!-- Plano Completo (3 Módulos Integrados) -->
+            <div class="p-6 md:p-8 rounded-[35px] border border-slate-800 bg-slate-950 text-white relative overflow-hidden group shadow-lg text-left mx-auto max-w-5xl">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+                    <div class="flex items-center gap-5 justify-center md:justify-start">
+                        <div class="p-4 bg-white/10 rounded-2xl text-red-500"><i data-lucide="rocket" class="w-8 h-8"></i></div>
+                        <div>
+                            <h3 class="text-xl font-extrabold mb-1 tracking-tight text-white">🚀 Plano Completo</h3>
+                            <div class="text-3xl font-black tracking-tighter">R$ 99 <span class="text-slate-400 font-bold text-sm">/mês</span></div>
+                        </div>
+                    </div>
+                    <div class="flex-grow max-w-md space-y-1 text-slate-300 font-bold text-[11px]">
+                        <p class="flex items-center gap-2 font-extrabold text-white justify-center md:justify-start"><i data-lucide="check" class="text-red-500 w-4 h-4"></i> 3 Módulos: Delivery + Salão + Reservas</p>
+                        <p class="flex items-center gap-2 font-medium opacity-80 justify-center md:justify-start">A solução definitiva com Totem, Estoque e Automação Total</p>
+                    </div>
+                    <a href="https://wa.me/5583993939593" target="_blank" class="px-8 py-3.5 bg-white text-slate-950 font-black rounded-xl text-base shadow-md hover:bg-slate-200 transition-all text-center tracking-tight w-full md:w-auto uppercase">
+                        Assinar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Porquê Nos Section -->
+    <section id="porque-nos" class="py-20 bg-white text-center border-t border-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-extrabold mb-4 text-slate-900 tracking-tight">Porquê escolher o Operato?</h2>
+            <p class="text-slate-600 mb-12 font-medium text-base">Focamos na liberdade e no crescimento do seu negócio gastronômico.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:border-red-200 transition-colors">
+                    <div class="bg-red-100 w-12 h-12 rounded-xl flex items-center justify-center text-red-600 mb-6 shadow-inner">
+                        <i data-lucide="unlock" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-extrabold text-slate-900 mb-3 tracking-tight">Independência Total</h4>
+                    <p class="text-sm text-slate-600 font-medium leading-relaxed">
+                        Pare de depender exclusivamente de marketplaces com taxas abusivas. Tenha o seu próprio canal de vendas direto e mantenha o lucro no seu bolso.
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:border-red-200 transition-colors">
+                    <div class="bg-red-100 w-12 h-12 rounded-xl flex items-center justify-center text-red-600 mb-6 shadow-inner">
+                        <i data-lucide="mouse-pointer-2" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-extrabold text-slate-900 mb-3 tracking-tight">Simplicidade Real</h4>
+                    <p class="text-sm text-slate-600 font-medium leading-relaxed">
+                        Sistema intuitivo desenhado para quem não tem tempo a perder. Treine a sua equipe em minutos e comece a operar hoje mesmo.
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:border-red-200 transition-colors">
+                    <div class="bg-red-100 w-12 h-12 rounded-xl flex items-center justify-center text-red-600 mb-6 shadow-inner">
+                        <i data-lucide="brush" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-extrabold text-slate-900 mb-3 tracking-tight">Sua Marca, Suas Regras</h4>
+                    <p class="text-sm text-slate-600 font-medium leading-relaxed">
+                        Personalize o cardápio com as suas cores e identidade visual. Fortaleça a sua marca na mente do cliente em cada pedido.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-500 py-20 text-center border-t border-slate-900">
+        <div class="max-w-4xl mx-auto px-6 mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-white tracking-tight">Pronto para digitalizar o seu negócio?</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-3">
+                <a href="https://wa.me/5583993939593" target="_blank" class="px-8 py-4 bg-white text-slate-900 font-bold rounded-full text-base shadow-xl hover:bg-slate-100 transition-all tracking-tight">Começar Agora</a>
+                <a href="https://wa.me/5583993939593" target="_blank" class="px-8 py-4 border-2 border-white/20 text-white font-bold rounded-full text-base hover:bg-white/10 transition-all tracking-tight text-center uppercase tracking-widest text-xs">Falar no WhatsApp</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 pt-10 border-t border-slate-900 text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex flex-col gap-3">
+    <div class="flex items-center gap-2 text-white">
+        <div class="w-8 h-8 rounded-lg bg-red-600 font-bold flex items-center justify-center shadow-lg">O</div>
+        <span class="text-lg font-extrabold tracking-tight">Operato</span>
+    </div>
+    <a href="https://www.instagram.com/menuoperato/" target="_blank"
+       class="flex items-center gap-2 px-4 py-2 rounded-full text-white font-bold text-xs w-fit transition-opacity hover:opacity-80"
+       style="background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @menuoperato
+    </a>
+</div>
+                <p class="text-[10px] font-medium opacity-60">© 2026 Operato Sistemas. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const navbar = document.getElementById('navbar');
+        window.onscroll = () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-md', 'py-3');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-md', 'py-3');
+                navbar.classList.add('py-4');
+            }
+        };
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.onclick = () => mobileMenu.classList.toggle('hidden');
+    </script>
+</body>
+</html>
